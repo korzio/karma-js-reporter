@@ -39,7 +39,7 @@ function jsReporter(baseReporterDecorator, formatError, config) {
   };
 
   this.specSkipped = function(browser, results) {
-    pending.push(test);
+    pending.push(...[].concat(results));
   };
 
   this.onRunComplete = function(browsers, results) {
