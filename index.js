@@ -83,10 +83,10 @@ function jsReporter(baseReporterDecorator, formatError, config) {
   }
 
   function errorToJSON(error) {
-    var formatted = formatError(error).split('\n');
+    var formatted = formatError(error);
     return {
-      message: formatted[0],
-      stack: formatted[1].trim()
+      message: formatted.split('\n')[0],
+      stack: formatted
     }
   }
 }
